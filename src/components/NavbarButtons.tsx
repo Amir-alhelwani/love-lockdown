@@ -20,7 +20,7 @@ const NavbarButtons = () => {
           <Auth />
           <Link
             to="/#subscribe"
-            className={buttonVariants({ className: "uppercase max-sm:hidden" })}
+            className={buttonVariants({ className: "uppercase max-[375px]:hidden" })}
           >
             subscribe
           </Link>

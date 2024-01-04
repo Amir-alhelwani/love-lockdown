@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import image from "@/assets/images/final 111-02.webp";
+import useScrollToSection from "@/hooks/useScrollToSection";
 const Subscribe = () => {
+  useScrollToSection("subscribe");
   return (
-    <section>
+    <section id="subscribe">
       <div className="max-w-7xl w-full px-4 mx-auto py-12 flex flex-col max-md:gap-8 md:flex-row justify-around items-start">
         <div className="w-full">
           <h2 className="uppercase text-5xl mb-1">subscribe</h2>
@@ -21,7 +23,10 @@ const Subscribe = () => {
                 <Label htmlFor="email" className="text-right capitalize">
                   Enter your email here *
                 </Label>
-                <Input className="border-b-2 border-t-0 border-r-0 border-l-0 rounded-none p-0 focus-visible:ring-0 focus-visible:border-black border-black" id="email" />
+                <Input
+                  className="border-b-2 border-t-0 border-r-0 border-l-0 rounded-none p-0 focus-visible:ring-0 focus-visible:border-black border-black"
+                  id="email"
+                />
               </div>
             </div>
             <div className="flex mt-4 justify-center items-center">
@@ -40,7 +45,7 @@ const Subscribe = () => {
         <img src={image} alt="" />
         <div className="absolute top-0 left-[15%] md:-translate-y-14">
           <svg
-          className="w-[100px] h-[100px] md:w-[250px] md:h-[250px]"
+            className="w-[100px] h-[100px] md:w-[250px] md:h-[250px]"
             preserveAspectRatio="xMidYMid meet"
             data-bbox="8.858 19 182.285 162"
             viewBox="8.858 19 182.285 162"

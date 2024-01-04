@@ -19,10 +19,6 @@ const Home = () => {
   return (
     <Fragment>
       <Hero />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dicta
-      reiciendis? Animi libero sit in consequuntur? Perferendis officia,
-      exercitationem in numquam illo ad cum ipsam necessitatibus, possimus
-      nostrum facilis explicabo.
       <HeroImage />
       <EscapeRoomsIntro />
       <TicketsTypes />
