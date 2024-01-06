@@ -11,7 +11,7 @@ const NavbarLinks = () => {
           className={({ isActive }) =>
             `${
               isActive ? "text-electric-indigo" : "text-black"
-            } capitalize font-semibold`
+            } capitalize font-semibold font-text-font`
           }
         >
           {link.label}

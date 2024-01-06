@@ -13,18 +13,14 @@ const registerSchema = z.object({
   Name: z.string().min(1, "name field is required"),
   image: z
     .instanceof(File)
-    .refine((file) => {
-      if(!file) return false
-      return true
-      
-    }, "عذرًا، يجب إدخال صورة حصرًا")
+    .refine((file) => file.size !== 0, "image field is required")
     .refine((file) => {
       const image = file;
       if (!file) return false;
       return imageExtensions.includes(
         image.name.slice(image.name.lastIndexOf("."))
       );
-    }, "عذرًا، يجب إدخال صورة حصرًا"),
+    }, "please choose image only"),
   PhoneNumber: z
     .string()
     .min(1, "phone number field is required")

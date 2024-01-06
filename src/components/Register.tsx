@@ -26,6 +26,7 @@ import {
   FormMessage,
 } from "./ui/form";
 import { Input } from "./ui/input";
+import { ScrollArea } from "./ui/scroll-area";
 
 const Register = () => {
   const toast = useToast();
@@ -66,105 +67,114 @@ const Register = () => {
   });
   return (
     <MotionSlide direction={direction} key={"register"}>
-      <DialogHeader>
-        <DialogTitle className="text-center font-bold text-3xl">
-          Register
-        </DialogTitle>
-        <DialogDescription className="text-center text-xl">
-        Already a member{" "}
-          <Button
-            variant="link"
-            onClick={() => {
-              setContent("login");
-              setDirection(-1);
-            }}
-          >
-            Login
-          </Button>
-        </DialogDescription>
-      </DialogHeader>
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit((data: registerSchema) => mutate(data))}
-          className="grid gap-1 px-1"
-        >
-          <FormField
-            control={form.control}
-            name={"Name"}
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Name</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name={"email"}
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name={"PhoneNumber"}
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone Number</FormLabel>
-                <FormControl>
-                  <Input {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name={"image"}
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Image</FormLabel>
-                <FormControl>
-                  <Input
-                    onChange={(e) =>
-                      field.onChange(e.target.files ? e.target.files[0] : null)
-                    }
-                    type="file"
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name={"password"}
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input type="password" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <DialogFooter className="flex pt-3 justify-center items-center">
-            <Button size="full" className="capitalize" type="submit">
-              {isPending ? <LoadingButton /> : "Register"}
+      <ScrollArea className="h-[525px] px-2">
+        <DialogHeader>
+          <DialogTitle className="text-center font-title-font text-4xl">
+            Register
+          </DialogTitle>
+          <DialogDescription className="text-center font-text-font text-xl">
+            Already a member{" "}
+            <Button
+              variant="link"
+              className="font-text-font"
+              onClick={() => {
+                setContent("login");
+                setDirection(-1);
+              }}
+            >
+              Login
             </Button>
-          </DialogFooter>
-        </form>
-      </Form>
+          </DialogDescription>
+        </DialogHeader>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit((data: registerSchema) => mutate(data))}
+            className="grid gap-1 px-1"
+          >
+            <FormField
+              control={form.control}
+              name={"Name"}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name={"email"}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name={"PhoneNumber"}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name={"image"}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Image</FormLabel>
+                  <FormControl>
+                    <Input
+                      onChange={(e) =>
+                        field.onChange(
+                          e.target.files ? e.target.files[0] : null
+                        )
+                      }
+                      type="file"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name={"password"}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input type="password" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <DialogFooter className="flex pt-3 justify-center items-center">
+              <Button
+                size="full"
+                className="uppercase font-title-font text-xl"
+                type="submit"
+              >
+                {isPending ? <LoadingButton /> : "Register"}
+              </Button>
+            </DialogFooter>
+          </form>
+        </Form>
+      </ScrollArea>
     </MotionSlide>
   );
 };

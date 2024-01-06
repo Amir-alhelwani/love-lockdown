@@ -11,7 +11,10 @@ module.exports = {
     container: {
       center: true,
       padding: "2rem",
-      
+    },
+    fontFamily: {
+      "title-font": "title-font",
+      "text-font": "text-font",
     },
     extend: {
       zIndex: {

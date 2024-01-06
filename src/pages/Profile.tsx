@@ -7,9 +7,9 @@ const Profile = () => {
   const user = useUserStore((state) => state.user);
   if (!user) navigate("/");
   return (
-    <section className="container min-h-100vh flex justify-center items-start">
+    <section className="max-w-7xl px-4 mx-auto min-h-100vh flex justify-center items-start">
       <div className="border border-black rounded-xl mt-12 max-w-[75%] mx-auto w-full p-4 flex flex-col justify-start items-start my-8">
-        <div className="w-[250px] h-[250px] mx-auto">
+        <div className="w-[250px] mb-5 h-[250px] mx-auto">
           <img
             className="w-full mx-auto rounded-full shadow-lg h-full object-cover"
             src={user?.imageUrl}

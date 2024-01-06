@@ -1,6 +1,6 @@
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { navLinks } from "@/constants/navbar";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -44,7 +44,7 @@ const Footer = () => {
           <div>
             <h3 className="text-3xl mb-4">Menu</h3>
             {navLinks.map((link) => (
-              <div className="text-xl my-2">
+              <div key={link.id} className="text-xl my-2">
                 <NavLink
                   key={link.id}
                   to={link.path}
@@ -68,22 +68,14 @@ const Footer = () => {
             <h3 className="text-3xl mb-4">Follow Us</h3>
             <div className="flex flex-col justify-center items-center gap-2">
               <div className="flex-1 w-full">
-                <Link className={buttonVariants({ size: "full" })} to="/">
-                  TikTok
-                </Link>
+                <Button className="w-full">TikTok</Button>
               </div>
               <div className="flex-1 flex justify-center items-center gap-2">
-                <Link className={buttonVariants({ size: "full" })} to="/">
-                  Facebook
-                </Link>
-                <Link className={buttonVariants({ size: "full" })} to="/">
-                  Instagram
-                </Link>
+                <Button className="w-full">Facebook</Button>
+                <Button className="w-full">Instagram</Button>
               </div>
               <div className="flex-1 w-full">
-                <Link className={buttonVariants({ size: "full" })} to="/">
-                  YouTube
-                </Link>
+                <Button className="w-full">YouTube</Button>
               </div>
             </div>
           </div>

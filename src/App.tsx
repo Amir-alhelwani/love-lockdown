@@ -3,7 +3,6 @@ import Transition from "@/components/Transition";
 import { AnimatePresence } from "framer-motion";
 import { lazy } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import PersistLogin from "./components/PersistLogin";
 import useAxiosPrivate from "./hooks/useAxiosPrivate";
 
 const Home = lazy(() => import("@/pages/Home"));
@@ -23,34 +22,32 @@ const App = () => {
   return (
     <AnimatePresence initial={false} mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route element={<PersistLogin />}>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Transition Page={Home} />} />
-            <Route
-              path="/escape-rooms"
-              element={<Transition Page={EscapeRooms} />}
-            />
-            <Route
-              path="/escape-rooms/:id"
-              element={<Transition Page={Tickets} />}
-            />
-            <Route path="/blog" element={<Transition Page={Blog} />} />
-            <Route path="/blog/:id" element={<Transition Page={Article} />} />
-            <Route
-              path="/user/ticket"
-              element={<Transition Page={UserTicket} />}
-            />
-            <Route path="/profile" element={<Transition Page={Profile} />} />
-            <Route
-              path="/user/preferences"
-              element={<Transition Page={PersonalPreferences} />}
-            />
-            <Route
-              path="/user/partner"
-              element={<Transition Page={PartnerPreferences} />}
-            />
-            <Route path="*" element={<Transition Page={NotFound} />} />
-          </Route>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Transition Page={Home} />} />
+          <Route
+            path="/escape-rooms"
+            element={<Transition Page={EscapeRooms} />}
+          />
+          <Route
+            path="/escape-rooms/:id"
+            element={<Transition Page={Tickets} />}
+          />
+          <Route path="/blog" element={<Transition Page={Blog} />} />
+          <Route path="/blog/:id" element={<Transition Page={Article} />} />
+          <Route
+            path="/user/ticket"
+            element={<Transition Page={UserTicket} />}
+          />
+          <Route path="/profile" element={<Transition Page={Profile} />} />
+          <Route
+            path="/user/preferences"
+            element={<Transition Page={PersonalPreferences} />}
+          />
+          <Route
+            path="/user/partner"
+            element={<Transition Page={PartnerPreferences} />}
+          />
+          <Route path="*" element={<Transition Page={NotFound} />} />
         </Route>
       </Routes>
     </AnimatePresence>

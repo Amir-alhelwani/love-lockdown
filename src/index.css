@@ -7,15 +7,15 @@
 }
 
 @font-face {
-  font-family: "font";
-  src: url("./assets/font/Oswald-VariableFont_wght.ttf");
+  font-family: "title-font";
+  src: url("./assets/font/Oswald.ttf");
   font-display: swap;
 }
-
-* {
-  font-family: "font" !important;
+@font-face {
+  font-family: "text-font";
+  src: url("./assets/font/Helvetica.otf");
+  font-display: swap;
 }
-
 @layer base {
   :root {
     --nav-height: 75px;
@@ -28,10 +28,11 @@
   h2,
   h3,
   h4 {
-    @apply font-bold text-black;
+    font-family: "title-font" !important;
+    @apply font-medium text-black;
   }
   p {
-    @apply text-black;
+    @apply text-black font-text-font;
   }
   a {
     @apply text-black hover:text-electric-indigo transition-colors duration-200;

@@ -4,9 +4,9 @@ import heroContent from "@/constants/home/hero";
 
 const Hero = () => {
   return (
-    <section className="max-w-7xl px-4 mx-auto py-12 flex flex-col md:flex-row justify-start items-start gap-6 md:gap-8 lg:gap-12">
+    <section className="max-w-7xl px-4 mx-auto py-12 flex flex-col md:flex-row justify-start items-start gap-6 md:gap-8">
       <div className="flex-1 w-full">
-        <h2 className="w-full capitalize mx-auto text-5xl md:text-6xl lg:text-8xl">
+        <h2 className="w-full capitalize mx-auto text-5xl md:text-6xl font-medium lg:text-9xl">
           {heroContent.title}
         </h2>
       </div>
@@ -21,7 +21,7 @@ const Hero = () => {
             className={buttonVariants({
               variant: "secondary",
               size: "full",
-              className: "uppercase md:!w-10/12 !justify-start py-5 text-3xl",
+              className: "uppercase md:!w-10/12 !justify-start py-5 !text-3xl font-title-font",
             })}
           >
             {heroContent.button}

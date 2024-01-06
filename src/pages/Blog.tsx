@@ -16,7 +16,7 @@ const Blog = () => {
       <section className="max-w-7xl px-4 mx-auto py-10">
         <div className="flex w-full flex-col sm:flex-row justify-center items-center">
           <div className="flex-1 w-full">
-          <h1 className="text-3xl sm:hidden block mb-4 leading-[4.5rem]">
+          <h1 className="text-3xl uppercase sm:hidden block mb-4 leading-[4.5rem]">
               THE Love Lockdown BLOG
             </h1>
             <div className="rounded-xl overflow-hidden">
@@ -28,11 +28,11 @@ const Blog = () => {
             </div>
           </div>
           <div className="flex-1">
-            <h1 className="text-5xl hidden sm:block mb-4 max-w-[50%] leading-[4.5rem]">
+            <h1 className="text-7xl uppercase hidden sm:block mb-4 max-w-[60%] leading-[5.5rem]">
               THE Love Lockdown BLOG
             </h1>
             <h2 className="text-2xl pb-4 max-sm:pt-3">New post every week</h2>
-            <p className="max-w-[75%]">
+            <p className="max-w-[75%] text-lg">
               Welcome to our blog hub! Get ready for awesome stories about our
               concept, Love Lockdown. It's all about love, fun dates, and cool
               tips. Dive in and join the adventure with us every week!

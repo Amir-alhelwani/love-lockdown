@@ -19,7 +19,7 @@ const Auth = () => {
         className="flex justify-center items-center px-1 gap-1 text-xl capitalize"
       >
         <FaCircleUser className="text-2xl" />
-        <span>login</span>
+        <span className="font-title-font">login</span>
       </Button>
       <Dialog open={openModal}>
         <DialogContent

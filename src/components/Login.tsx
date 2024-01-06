@@ -61,13 +61,14 @@ const Login = () => {
   return (
     <MotionSlide direction={direction} key={"login"}>
       <DialogHeader>
-        <DialogTitle className="text-center font-bold text-3xl">
+        <DialogTitle className="text-center font-title-font text-4xl">
           Login
         </DialogTitle>
-        <DialogDescription className="text-center text-xl">
+        <DialogDescription className="text-center font-text-font text-xl">
           New to this site?{" "}
           <Button
             variant="link"
+            className="font-text-font"
             onClick={() => {
               setContent("register");
               setDirection(1);
@@ -112,7 +113,7 @@ const Login = () => {
             <Button
               disabled={isPending}
               size="full"
-              className="capitalize"
+              className="uppercase font-title-font text-xl"
               type="submit"
             >
               {isPending ? <LoadingButton /> : "login"}

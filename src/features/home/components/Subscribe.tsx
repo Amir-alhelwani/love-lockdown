@@ -17,7 +17,7 @@ const Subscribe = () => {
             Subscribe to our newsletter and be the first to know about new
             escape room themes, special events, and exclusive discounts.
           </p>
-          <form>
+          <form onSubmit={(e) => e.preventDefault()}>
             <div className="grid gap-4 py-4">
               <div className="flex justify-center items-start flex-col">
                 <Label htmlFor="email" className="text-right capitalize">
@@ -32,7 +32,7 @@ const Subscribe = () => {
             <div className="flex mt-4 justify-center items-center">
               <Button
                 size="full"
-                className="capitalize py-4 justify-start"
+                className="uppercase py-4 justify-start"
                 type="submit"
               >
                 subscribe
