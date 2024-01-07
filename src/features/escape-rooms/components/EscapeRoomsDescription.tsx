@@ -33,7 +33,7 @@ const EscapeRoomsDescription = () => {
         <h2 className="text-5xl text-center uppercase">available on</h2>
         <div className="mt-8 flex justify-start sm:justify-center flex-wrap items-start gap-5">
           <a
-            href="#"
+            href="https://degoudenkooi.be/"
             target="_blank"
             className={buttonVariants({
               className: "!px-10 max-sm:!flex-1 !text-xl !py-6 capitalize font-title-font font-normal",
@@ -42,7 +42,7 @@ const EscapeRoomsDescription = () => {
             De gouden Kooi
           </a>
           <a
-            href="#"
+            href="https://koezio.co/nl/bruxelles/landing/elite-agents-missie-bij-koezio-brussel/"
             target="_blank"
             className={buttonVariants({
               className: "!px-10 max-sm:!flex-1 !text-xl !py-6 capitalize font-title-font font-normal",
@@ -51,7 +51,7 @@ const EscapeRoomsDescription = () => {
             Koezio Brussel
           </a>
           <a
-            href="#"
+            href="https://www.exitgamesbelgium.be/escape-room-antwerpen"
             target="_blank"
             className={buttonVariants({
               className: "!px-10 max-sm:!flex-1 !text-xl !py-6 capitalize font-title-font font-normal",

@@ -15,6 +15,7 @@ const UserTicket = lazy(() => import("@/pages/UserTicket"));
 const PersonalPreferences = lazy(() => import("@/pages/PersonalPreferences"));
 const PartnerPreferences = lazy(() => import("@/pages/PartnerPreferences"));
 const Article = lazy(() => import("@/pages/Article"));
+const Event = lazy(() => import("@/pages/Event"));
 
 const App = () => {
   const location = useLocation();
@@ -47,6 +48,7 @@ const App = () => {
             path="/user/partner"
             element={<Transition Page={PartnerPreferences} />}
           />
+          <Route path="/event" element={<Transition Page={Event} />} />
           <Route path="*" element={<Transition Page={NotFound} />} />
         </Route>
       </Routes>

@@ -17,7 +17,7 @@ const Hero = () => {
         </p>
         <div className="mt-6 sm:mt-8">
           <Link
-            to="/escape-rooms"
+            to="/event"
             className={buttonVariants({
               variant: "secondary",
               size: "full",
