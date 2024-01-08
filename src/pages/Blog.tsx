@@ -1,16 +1,8 @@
 import BlogImage from "@/assets/images/blog.webp";
-import LoadingPage from "@/components/ui/LoadingPage";
-import getBlog from "@/features/blog/services/getBlog";
-import { useQuery } from "@tanstack/react-query";
+import { blogs } from "@/constants/blog";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
-  const { data, isPending, isError } = useQuery({
-    queryKey: ["blogs"],
-    queryFn: getBlog,
-  });
-  if (isPending) return <LoadingPage />;
-  if (isError) return <>error</>;
   return (
     <>
       <section className="max-w-7xl px-4 mx-auto py-10">
@@ -41,13 +33,13 @@ const Blog = () => {
         </div>
       </section>
       <section className="bg-lavender-gray">
-        <div className="container p-10">
-          <div className="flex justify-center items-center gap-12">
-            {data.map((blog) => (
+        <div className="max-w-7xl px-4 py-10 mx-auto">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-12">
+            {blogs.map((blog) => (
               <Link
                 key={blog.id}
                 to={blog.id.toString()}
-                className="w-[450px] border-2 border-black"
+                className="w-[500px] border-2 border-black"
               >
                 <div className="bg-black w-full h-[400px]">
                   <img
@@ -63,11 +55,11 @@ const Blog = () => {
                     </div>
                     <div className="text-sm">
                       <p>Loujain Idelbi</p>
-                      <p>Dec 11 . 1 min</p>
+                      <p>Dec 11 . {blog.readTime} min</p>
                     </div>
                   </div>
-                  <h3 className="pb-3 text-lg line-clamp-2">{blog.title}</h3>
-                  <p className="line-clamp-3">{blog.description}</p>
+                  <h3 className="pb-3 max-w-[95%] text-2xl">{blog.title}</h3>
+                  <p className="line-clamp-2 mt-4 mb-6">{blog.description}</p>
                 </div>
               </Link>
             ))}
