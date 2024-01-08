@@ -11,7 +11,7 @@ const WelcomeSection = () => {
   return (
     <MotionSlide direction={direction} key={"welcome"}>
       <h1 className="text-center text-4xl">partner Preferences</h1>
-      <p className="sm:max-w-[60%] mx-auto py-4 text-justify text-xl">
+      <p className="sm:max-w-[60%] mx-auto py-4 text-center text-xl">
         Kindly complete your partner preferences to ensure we find you the
         perfect match.
       </p>

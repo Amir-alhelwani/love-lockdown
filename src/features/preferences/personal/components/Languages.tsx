@@ -26,7 +26,7 @@ const Languages = ({ isPending }: { isPending: boolean }) => {
   });
   return (
     <MotionSlide direction={direction} key={"languages"}>
-      <h2 className="text-3xl text-center">languages</h2>
+      <h2 className="text-3xl text-center capitalize">languages</h2>
       <div className="w-3/4 px-1 mx-auto py-5">
         {fields.map((field, index) => (
           <div key={field.id} className="w-full mb-2">
@@ -67,11 +67,12 @@ const Languages = ({ isPending }: { isPending: boolean }) => {
         </Button>
       </div>
       <div className="flex px-1 justify-start items-center gap-2 my-5">
-        <Button disabled={isPending} type="submit">
+        <Button className="capitalize" disabled={isPending} type="submit">
           {isPending ? <LoadingButton /> : "submit"}
         </Button>
         <Button
           type="button"
+          className="capitalize"
           onClick={() => {
             setDirection(-1);
             setContent("musicGenres");

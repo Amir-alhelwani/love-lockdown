@@ -1,74 +1,65 @@
-import { buttonVariants } from "@/components/ui/button";
+import LoadingPage from "@/components/ui/LoadingPage";
+import { Button } from "@/components/ui/button";
 import {
-  DialogDescription,
   DialogHeader,
-  DialogTitle,
+  DialogTitle
 } from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import useUserStore from "@/features/auth/useUserStore";
+import getRooms from "@/features/escape-rooms/services/getRooms";
+import useToast from "@/hooks/useToast";
+import { useQuery } from "@tanstack/react-query";
+import useEventStore from "../services/useEventStore";
 
 const SelectRoom = () => {
-  // const user = useUserStore((state) => state.user);
-  // const setRoomId = useEventStore((state) => state.setRoomId);
-  // const setContent = useEventStore((state) => state.setContent);
-  // const roomId = useEventStore((state) => state.roomId);
-  // const { data, isPending, isError } = useQuery({
-  //   queryKey: ["rooms"],
-  //   queryFn: getRooms,
-  // });
-  // if (isPending) return <LoadingPage />;
-  // if (isError) return <>error</>;
+  const user = useUserStore((state) => state.user);
+  const toast = useToast();
+  const setRoomId = useEventStore((state) => state.setRoomId);
+  const setContent = useEventStore((state) => state.setContent);
+  const roomId = useEventStore((state) => state.roomId);
+  const { data, isPending, isError } = useQuery({
+    queryKey: ["rooms"],
+    queryFn: getRooms,
+  });
+  if (isPending) return <LoadingPage />;
+  if (isError) return <>error</>;
   return (
     <>
       <DialogHeader>
-        <DialogTitle className="capitalize font-bold text-3xl">
+        <DialogTitle className="capitalize pl-2 font-bold text-3xl">
           select room
         </DialogTitle>
-        <DialogDescription className="capitalize">
-          please select .......
-        </DialogDescription>
       </DialogHeader>
       <div className="w-full">
         <div className="flex flex-col justify-center gap-4 items-start">
-          {/* <ScrollArea className="w-full h-[250px] mb-2 px-2"> */}
-            <a
-              href="https://degoudenkooi.be/"
-              target="_blank"
-              className={buttonVariants({
-                className:
-                  "w-full !px-10 max-sm:!flex-1 !text-xl !py-6 capitalize font-title-font font-normal",
-              })}
-            >
-              De gouden Kooi
-            </a>
-            <a
-              href="https://koezio.co/nl/bruxelles/landing/elite-agents-missie-bij-koezio-brussel/"
-              target="_blank"
-              className={buttonVariants({
-                className:
-                  "w-full !px-10 max-sm:!flex-1 !text-xl !py-6 capitalize font-title-font font-normal",
-              })}
-            >
-              Koezio Brussel
-            </a>
-            <a
-              href="https://www.exitgamesbelgium.be/escape-room-antwerpen"
-              target="_blank"
-              className={buttonVariants({
-                className:
-                  "w-full !px-10 max-sm:!flex-1 !text-xl !py-6 capitalize font-title-font font-normal",
-              })}
-            >
-              The Exit Game
-            </a>
-          {/* </ScrollArea> */}
-          {/* <Button
-              onClick={() => {
-                if (!user) setContent("login");
-                else setContent("date");
-              }}
-              className="capitalize"
-            >
-              next
-            </Button> */}
+          <ScrollArea className="w-full h-[190px] mb-2 px-2">
+            {data.map((room) => (
+              <button
+                key={room.room.id}
+                onClick={() => setRoomId(room.room.id)}
+                className={`mb-5 py-2 border border-black w-full rounded-lg ${
+                  room.room.id === roomId
+                    ? "bg-black text-papaya-whip"
+                    : "bg-transparent"
+                }`}
+              >
+                {room.room.roomName}
+              </button>
+            ))}
+          </ScrollArea>
+          <Button
+            onClick={() => {
+              if (roomId === -1) {
+                toast("Please select the escape room to continue.")
+                return;
+              }
+              if (!user) setContent("login");
+              else setContent("date");
+            }}
+            className="capitalize ml-2"
+          >
+            next
+          </Button>
         </div>
       </div>
     </>

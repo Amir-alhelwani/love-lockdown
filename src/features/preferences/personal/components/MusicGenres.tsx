@@ -64,7 +64,7 @@ const MusicGenres = () => {
                     return (
                       <FormItem
                         key={item.label}
-                        className="flex flex-row items-baseline space-x-3 space-y-0"
+                        className="flex flex-row items-baseline space-x-3 space-y-0 capitalize"
                       >
                         <FormControl>
                           <Checkbox
@@ -96,6 +96,7 @@ const MusicGenres = () => {
       <div className="flex px-1 justify-start items-center gap-2 my-5">
         <Button
           type="button"
+          className="capitalize"
           onClick={async () => {
             const isValid = await trigger(["musicGenres"]);
             if (isValid) {
@@ -108,6 +109,7 @@ const MusicGenres = () => {
         </Button>
         <Button
           type="button"
+          className="capitalize"
           onClick={() => {
             setDirection(-1);
             setContent("freeTime");

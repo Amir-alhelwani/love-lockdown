@@ -73,7 +73,7 @@ const FreeTime = () => {
                     return (
                       <FormItem
                         key={item.label}
-                        className="flex flex-row items-baseline space-x-3 space-y-0"
+                        className="flex flex-row items-baseline space-x-3 space-y-0 capitalize"
                       >
                         <FormControl>
                           <Checkbox
@@ -105,6 +105,7 @@ const FreeTime = () => {
       <div className="flex px-1 justify-start items-center gap-2 my-5">
         <Button
           type="button"
+          className="capitalize"
           onClick={async () => {
             const isValid = await trigger(["freeTime"]);
             if (isValid) {
@@ -117,6 +118,7 @@ const FreeTime = () => {
         </Button>
         <Button
           type="button"
+          className="capitalize"
           onClick={() => {
             setDirection(-1);
             setContent("personalBelieves");

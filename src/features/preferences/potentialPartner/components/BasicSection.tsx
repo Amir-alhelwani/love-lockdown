@@ -58,7 +58,7 @@ const BasicSection = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="capitalize">
                         <SelectValue placeholder="Favorite Holiday Destination" />
                       </SelectTrigger>
                     </FormControl>
@@ -96,8 +96,8 @@ const BasicSection = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="body type" />
+                      <SelectTrigger className="capitalize">
+                        <SelectValue placeholder="Body Type" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -145,7 +145,7 @@ const BasicSection = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="capitalize">
                         <SelectValue placeholder="Commitment Level" />
                       </SelectTrigger>
                     </FormControl>
@@ -180,7 +180,7 @@ const BasicSection = () => {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="capitalize">
                         <SelectValue placeholder="pet" />
                       </SelectTrigger>
                     </FormControl>
@@ -256,7 +256,7 @@ const BasicSection = () => {
                         return (
                           <FormItem
                             key={item.label}
-                            className="flex flex-row items-baseline space-x-3 space-y-0"
+                            className="flex flex-row items-baseline space-x-3 space-y-0 capitalize"
                           >
                             <FormControl>
                               <Checkbox

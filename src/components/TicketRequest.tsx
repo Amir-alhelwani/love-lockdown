@@ -18,13 +18,13 @@ const TicketRequest = () => {
   const queryClient = useQueryClient();
   const toast = useToast();
   const user = useUserStore((state) => state.user);
+
   const { data, isPending, isError } = useQuery({
     queryKey: ["requests", user?.id],
-    placeholderData: [],
     queryFn: getRequest,
+    initialData: [],
     refetchInterval: 3000,
   });
-
   const { mutate } = useMutation({
     mutationFn: ({
       requestId,
