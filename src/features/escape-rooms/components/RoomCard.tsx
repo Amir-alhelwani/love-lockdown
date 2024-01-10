@@ -14,8 +14,8 @@ const RoomCard = ({ room }: { room: GetRooms }) => {
           alt={room.room.roomName}
         />
       </div>
-      <div className="w-full flex flex-col justify-start items-center -translate-y-1/3">
-        <h3 className="w-full text-xl">{room.room.roomName}</h3>
+      <div className="w-full rounded-t-lg bg-lavender-gray/60 flex flex-col justify-start items-center -translate-y-1/3">
+        <h3 className="w-full pl-3 pt-1 text-xl">{room.room.roomName}</h3>
         <p title={room.room.description} className="pt-4 line-clamp-3">
           {room.room.description}
         </p>

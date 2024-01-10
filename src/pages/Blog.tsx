@@ -33,22 +33,22 @@ const Blog = () => {
         </div>
       </section>
       <section className="bg-lavender-gray">
-        <div className="max-w-7xl px-4 py-10 mx-auto">
+        <div className="max-w-7xl px-2 sm:px-4 py-10 mx-auto">
           <div className="flex flex-col md:flex-row justify-center items-center gap-12">
             {blogs.map((blog) => (
               <Link
                 key={blog.id}
                 to={blog.id.toString()}
-                className="w-[500px] border-2 border-black"
+                className="w-full sm:w-[500px] border-2 border-black"
               >
-                <div className="bg-black w-full h-[400px]">
+                <div className="bg-black w-full h-[250] sm:h-[400px]">
                   <img
                     className="w-full h-full object-cover"
                     src={blog.image}
                     alt=""
                   />
                 </div>
-                <div className="bg-papaya-whip p-6">
+                <div className="bg-papaya-whip p-3 sm:p-6">
                   <div className="flex justify-start items-center gap-5 mb-3">
                     <div className="w-10 h-10 bg-gray-500 rounded-full text-white flex justify-center items-center">
                       L I
@@ -58,8 +58,8 @@ const Blog = () => {
                       <p>Dec 11 . {blog.readTime} min</p>
                     </div>
                   </div>
-                  <h3 className="pb-3 max-w-[95%] text-2xl">{blog.title}</h3>
-                  <p className="line-clamp-2 mt-4 mb-6">{blog.description}</p>
+                  <h3 className="pb-3 max-w-[95%] text-xl sm:text-2xl">{blog.title}</h3>
+                  <p className="line-clamp-2 sm:mt-4 mb-6">{blog.description}</p>
                 </div>
               </Link>
             ))}
