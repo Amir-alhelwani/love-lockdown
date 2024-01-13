@@ -18,6 +18,7 @@ const Article = lazy(() => import("@/pages/Article"));
 const Event = lazy(() => import("@/pages/Event"));
 
 const App = () => {
+  console.log("fojfojf")
   const location = useLocation();
   useAxiosPrivate();
   return (
